@@ -8,3 +8,4 @@ test-results
 .vercel
 next-env.d.ts
 pnpm-lock.yaml
+src/generated/prisma
