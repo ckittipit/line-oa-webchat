@@ -1,9 +1,10 @@
 import "server-only"
 import { PrismaPg } from "@prisma/adapter-pg"
 import { PrismaClient } from "@/generated/prisma/client"
+import { getDatabaseEnv } from "@/lib/env/server"
 
 function createPrismaClient() {
-    const databaseUrl = process.env.DATABASE_URL
+    const { DATABASE_URL: databaseUrl } = getDatabaseEnv()
 
     if (!databaseUrl) throw new Error("DATABASE_URL is not confiqured")
 
