@@ -42,7 +42,7 @@ export async function processLineWebhookEvent(event: webhook.Event) {
     await db.$transaction(async (transaction) => {
         const profileData = profile
             ? {
-                  diaplayName: profile.displayName,
+                  displayName: profile.displayName,
                   pictureUrl: profile.pictureUrl ?? null,
               }
             : {}
